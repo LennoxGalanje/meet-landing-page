@@ -1,0 +1,321 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
+
+/* || REST */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+    padding: 0;
+    font-size: inherit;
+    font-weight: normal;
+}
+
+/* || VARIABLES */
+:root {
+    /* COLORS */
+    --CYAN-600: #4d96a9;
+    --CYAN-300: #8fe3f9;
+    --PURPLE-600: #855fb1;
+    --PURPLE-300: #d9b8ff;
+    --SLATE-900: #28283d;
+    --SLATE-600: #87879d;
+    --SLATE-300: #d1d1df;
+    --WHITE: #fafafa;
+
+    /* TYPOGRAPHY */
+    --FF: "Red Hat Display", serif;
+    --TEXT-PRESET-3-LS: 0.25rem;
+
+    /* TYPOGRAPHY-DESKTOP */
+    --TEXT-PRESET-1-DSK: 900 4rem/110% var(--FF);
+    --TEXT-PRESET-2-DSK: 900 2.5rem/110% var(--FF);
+    --TEXT-PRESET-3-DSK: 900 1rem/110% var(--FF);
+    --TEXT-PRESET-4-DSK: 500 1.125rem/150% var(--FF);
+    --TEXT-PRESET-5-DSK: 900 1rem/150% var(--FF);
+
+    /* TYPOGRAPHY-TABLET */
+    --TEXT-PRESET-1-TBT: 900 3rem/110% var(--FF);
+    --TEXT-PRESET-2-TBT: 900 2.25rem/110% var(--FF);
+    --TEXT-PRESET-3-TBT: 900 0.875rem/110% var(--FF);
+    --TEXT-PRESET-4-TBT: 500 1rem/150% var(--FF);
+
+    /* TYPOGRAPHY-MOBILE */
+    --TEXT-PRESET-1-MOB: 900 2.5rem/110% var(--FF);
+    --TEXT-PRESET-2-MOB: 900 2rem/110% var(--FF);
+    --TEXT-PRESET-3-MOB: 900 0.75rem/110% var(--FF);
+}
+
+/* || UTILITY CLASSES */
+.offscreen {
+    position: absolute;
+    left: -10000px;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.center {
+    text-align: center;
+}
+
+.responsive-image {
+    display: none;
+}
+
+/* || GENERAL STYLES */
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    min-height: 100vh;
+    max-width: 100%;
+    overflow-x: hidden;
+    background-color: var(--WHITE);
+}
+
+a:any-link {
+    text-decoration: none;
+}
+
+/* MEET-HEADER */
+.meet-header {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 4rem;
+    padding: 3rem 0rem 2rem;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.meet-header__nav {
+    padding: 0rem 8.0313rem;
+}
+
+.meet-header__logo img {
+    max-width: 118px;
+}
+
+.meet-header-hero {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 3rem;
+    width: 100%;
+}
+
+.meet-header-hero__mob-tab img {
+    max-width: 433px;
+}
+
+.meet-header-hero__container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.meet-header-hero__title {
+    font: var(--TEXT-PRESET-1-MOB);
+    color: var(--SLATE-900);
+    max-width: 305px;
+    margin-bottom: 1.5rem;
+}
+
+.meet-header-hero__description {
+    font: var(--TEXT-PRESET-4-TBT);
+    color: var(--SLATE-600);
+    max-width: 305px;
+}
+
+.meet-header-hero__buttons {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.meet-header-hero__button {
+    padding: 1rem 2.5rem;
+    color: var(--WHITE);
+    font: var(--TEXT-PRESET-5-DSK);
+    border-radius: 29px;
+    display: block;
+    height: 56px;
+}
+
+.meet-header-hero__button--primary {
+    width: 193px;
+    background-color: var(--CYAN-600);
+}
+
+.meet-header-hero__button--primary span {
+    color: var(--CYAN-300);
+    display: inline-block;
+    margin-left: 0.25rem;
+}
+
+.meet-header-hero__button--secondary {
+    width: 161px;
+    background-color: var(--PURPLE-600);
+}
+
+/* MEET-MAIN */
+.meet-main {
+    display: flex;
+    justify-content: center;
+    padding: 7rem 2rem 4rem 2rem;
+    width: 100%;
+}
+
+.meet-main-features {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 4rem;
+}
+
+.section-marker {
+    width: 56px;
+    height: 56px;
+    background-color: var(--WHITE);
+    border: 1px solid var(--SLATE-300);
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    position: relative;
+    font: var(--TEXT-PRESET-5-DSK);
+    color: var(--SLATE-600);
+}
+
+.section-marker::before {
+    content: "";
+    width: 1px;
+    height: 80px;
+    background-color: var(--SLATE-300);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 100%;
+}
+
+.meet-main-features__image-group {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+    min-width: 311px;
+}
+
+.meet-main-features__image {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.meet-main-features__image img {
+    max-width: 147.5px;
+}
+
+.meet-main-features__subtitle {
+    font: var(--TEXT-PRESET-3-MOB);
+    letter-spacing: var(--TEXT-PRESET-3-LS);
+    color: var(--CYAN-600);
+    margin-bottom: 1rem;
+}
+
+.meet-main-features__title {
+    font: var(--TEXT-PRESET-2-MOB);
+    color: var(--SLATE-900);
+    max-width: 311px;
+    margin-bottom: 32px;
+}
+
+.meet-main-features__description {
+    font: var(--TEXT-PRESET-4-TBT);
+    color: var(--SLATE-600);
+    max-width: 311px;
+}
+
+/* MEET-FOOTER */
+.meet-footer {
+    width: 100%;
+    height: 374px;
+    padding: 4rem 2rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-image: url("./images/mobile/image-footer.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 6.75rem;
+}
+
+.meet-footer__overlay {
+    position: absolute;
+    width: 100%;
+    height: 374px;
+    background-color: var(--CYAN-600);
+    opacity: 85%;
+    top: 0;
+    left: 0;
+}
+
+.section-marker-wrapper {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 346px;
+    z-index: 1;
+}
+
+.meet-footer__text-content {
+    z-index: 1;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.meet-footer__title {
+    font: var(--TEXT-PRESET-2-MOB);
+    color: var(--WHITE);
+    max-width: 311px;
+}
+
+.meet-footer__description {
+    font: var(--TEXT-PRESET-4-TBT);
+    color: var(--WHITE);
+    max-width: 311px;
+}
+
+.meet-footer__button {
+    width: 193px;
+    background-color: var(--PURPLE-600);
+    padding: 1rem 2.5rem;
+    color: var(--WHITE);
+    font: var(--TEXT-PRESET-5-DSK);
+    border-radius: 29px;
+    display: block;
+    height: 56px;
+}
+
+.meet-footer__button span {
+    color: var(--PURPLE-300);
+    display: inline-block;
+    margin-left: 0.25rem;
+}
